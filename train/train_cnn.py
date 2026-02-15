@@ -4,10 +4,10 @@ from torchmetrics import MetricCollection, Accuracy, F1Score
 from tqdm import tqdm
 import torch.optim as optim
 from models.cnn_model import CNN
-import torch
+import torch.nn as nn
 import matplotlib.pyplot as plt
 from torchvision import datasets, transforms
-
+import torch
 device = torch.device(DEVICE)
 CNN_model = CNN()
 CNN_model = CNN_model.to(device)
@@ -19,12 +19,13 @@ metrics = MetricCollection({
     'f1_score':F1Score(task="multiclass",num_classes=NUM_CLASSES, average='macro'),
     'acc':Accuracy(task="multiclass",num_classes=NUM_CLASSES)
 })
+metrics = metrics.to(device)
 
 train_DS = datasets.ImageFolder(root=TRAIN_DATE_PATH, transform=TRAIN_PRE_PROCESS)
 test_DS = datasets.ImageFolder(root=TEST_DATE_PATH, transform=TEST_PRE_PROCESS)
 
-train_DL = torch.utills.Dataloader(train_DS, batchsize=BATCH_SIZE, shuffle=SHUFFLE)
-test_DL = torch.utills.Dataloader(test_DS, batchsize=BATCH_SIZE, shuffle=False)
+train_DL = torch.utils.data.DataLoader(train_DS, batch_size=BATCH_SIZE, shuffle=SHUFFLE)
+test_DL = torch.utils.data.DataLoader(test_DS, batch_size=BATCH_SIZE, shuffle=False)
 
 loss_train_history = []
 total_train_loss = 0

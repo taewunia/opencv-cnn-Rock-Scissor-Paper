@@ -1,5 +1,6 @@
 import torch.nn as nn
 from configs.config import DROPOUT_RATE
+import torch
 
 class CNN(nn.Module):
     def __init__(self):

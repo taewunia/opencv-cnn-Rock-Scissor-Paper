@@ -19,12 +19,12 @@ metrics = MetricCollection({
     'f1_score':F1Score(task="multiclass",num_classes=NUM_CLASSES, average='macro'),
     'acc':Accuracy(task="multiclass",num_classes=NUM_CLASSES)
 })
-
+metrics = metrics.to(device)
 trasnfer_train_DS = datasets.ImageFolder(root=TRAIN_DATE_PATH, transform=TRANSFER_PRE_PROCESS['test'])
 trasnfer_test_DS = datasets.ImageFolder(root=TEST_DATE_PATH, transform=TRANSFER_PRE_PROCESS['val'])
 
-train_DL = torch.utills.Dataloader(trasnfer_train_DS, batchsize=BATCH_SIZE, shuffle=SHUFFLE)
-test_DL = torch.utills.Dataloader(trasnfer_test_DS, batchsize=BATCH_SIZE, shuffle=False)
+train_DL = torch.utils.data.DataLoader(trasnfer_train_DS, batch_size=BATCH_SIZE, shuffle=SHUFFLE)
+test_DL = torch.utils.data.DataLoader(trasnfer_test_DS, batch_size=BATCH_SIZE, shuffle=False)
 
 val_loos_history = []
 for epoch in range(EPOCHS):

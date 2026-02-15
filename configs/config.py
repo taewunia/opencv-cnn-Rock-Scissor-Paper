@@ -1,7 +1,5 @@
 #model training
-from learn import criterion
 import torch.nn as nn
-import torch.optim as optim
 EPOCHS = 70
 BATCH_SIZE = 64
 LEARNING_RATE = 0.001
@@ -22,7 +20,7 @@ TRANSFER_MODEL_PATH = "/Users/choetaewon/PyCharmMiscProject/model/transfer.pt"
 
 #data path
 TRAIN_DATE_PATH = "/Users/choetaewon/PyCharmMiscProject/datasets/Rock-Paper-Scissors/train"
-TEST_DATE_PATH = "/Users/choetaewon/PyCharmMiscProject/datasets/Rock-Paper-Scissors/test'"
+TEST_DATE_PATH = "/Users/choetaewon/PyCharmMiscProject/datasets/Rock-Paper-Scissors/test"
 
 #cap
 CAP = 0
