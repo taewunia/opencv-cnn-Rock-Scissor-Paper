@@ -23,3 +23,6 @@ TRANSFER_MODEL_PATH = "/Users/choetaewon/PyCharmMiscProject/model/transfer.pt"
 #data path
 TRAIN_DATE_PATH = "/Users/choetaewon/PyCharmMiscProject/datasets/Rock-Paper-Scissors/train"
 TEST_DATE_PATH = "/Users/choetaewon/PyCharmMiscProject/datasets/Rock-Paper-Scissors/test'"
+
+#cap
+CAP = 0

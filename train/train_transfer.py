@@ -3,7 +3,7 @@ from configs.config import TRAIN_DATE_PATH, TEST_DATE_PATH, DEVICE, EPOCHS, BATC
 from torchmetrics import MetricCollection, Accuracy, F1Score
 from tqdm import tqdm
 import torch.optim as optim
-from models.transfet_model import transfer_model
+from models.transfer_model import transfer_model
 import torch
 import matplotlib.pyplot as plt
 from torchvision import datasets, transforms
