@@ -14,6 +14,7 @@ SHUFFLE = True
 DEVICE = "mps"
 NUM_CLASSES = 3
 SAVE_PATH = ""
+CLASSES = ['paper', 'rock', 'scissors']
 
 #model path
 CNN_MODEL_PATH = "/Users/choetaewon/PyCharmMiscProject/model.pt"
